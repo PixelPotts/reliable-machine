@@ -1,0 +1,72 @@
+========================================
+RELIABLEBOSTON.COM - QUICK GITHUB SETUP
+Auto-Deploy on Git Push
+========================================
+
+STEP 1: CREATE GITHUB REPO
+Go to: https://github.com/new
+Repository name: reliableboston-website  
+Description: Professional aerospace manufacturing website for Reliable Machine Boston
+Visibility: Public
+Do NOT initialize with README
+Click "Create repository"
+
+STEP 2: PUSH CODE TO GITHUB
+Copy and paste these commands in terminal:
+
+cd cloudflare-deploy
+git init
+git branch -M main
+git add .
+git commit -m "Initial commit - ReliableBoston.com website"
+git remote add origin https://github.com/YOUR_USERNAME/reliableboston-website.git
+git push -u origin main
+
+STEP 3: CONNECT CLOUDFLARE PAGES TO GITHUB
+1. Go to: https://dash.cloudflare.com → Pages
+2. "Create a project" → "Connect to Git"  
+3. Authorize Cloudflare to access GitHub
+4. Select: reliableboston-website repository
+5. Project name: reliableboston-com
+6. Build settings: (leave all empty)
+7. "Save and Deploy"
+
+STEP 4: ADD CUSTOM DOMAIN (NO PROXY)
+1. Pages project → Custom domains
+2. Add: reliableboston.com (DNS only - gray cloud)
+3. Add: www.reliableboston.com (DNS only - gray cloud)
+
+STEP 5: DNS RECORDS AT REGISTRAR
+Type: A      Name: @    Value: [IP from Pages]
+Type: CNAME  Name: www  Value: reliableboston-com.pages.dev
+
+========================================
+AUTO-DEPLOY WORKFLOW:
+========================================
+
+Make changes → Save files
+git add .
+git commit -m "Describe your changes"
+git push origin main
+
+Cloudflare automatically:
+✓ Detects push in 10-30 seconds
+✓ Deploys site in 1-2 minutes
+✓ Updates https://reliableboston.com
+✓ Invalidates cache
+
+========================================
+BENEFITS:
+✓ Auto-deploy on git push
+✓ Version control and history  
+✓ Easy rollbacks to previous versions
+✓ Multiple developers can collaborate
+✓ Free hosting and deployment
+✓ No manual uploads needed
+========================================
+
+Your website will be live at:
+https://reliableboston.com
+https://www.reliableboston.com
+
+Test page: https://reliableboston.com/test.html

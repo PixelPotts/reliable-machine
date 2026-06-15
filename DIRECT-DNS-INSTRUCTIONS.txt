@@ -1,0 +1,61 @@
+========================================
+RELIABLEBOSTON.COM - DIRECT DNS SETUP  
+NO PROXY / NO CLOUDFLARE ROUTING
+========================================
+
+STEP 1: DEPLOY TO CLOUDFLARE PAGES
+1. Go to: https://dash.cloudflare.com
+2. Click "Pages" → "Create a project" → "Upload assets"
+3. Name: reliableboston-com  
+4. Upload: reliableboston-website.zip file
+5. Click "Deploy site"
+
+STEP 2: GET YOUR PAGES IP ADDRESS
+After deployment:
+1. Go to your Pages project
+2. Click "Custom domains" tab
+3. The IP address will be shown when you add your domain
+
+STEP 3: ADD DNS RECORDS AT YOUR DOMAIN REGISTRAR
+Log into where you bought reliableboston.com and add:
+
+Record Type: A
+Name: @
+Value: [IP from Pages project]  
+TTL: 300
+
+Record Type: CNAME
+Name: www
+Value: reliableboston-com.pages.dev
+TTL: 300
+
+STEP 4: CONNECT DOMAIN IN CLOUDFLARE PAGES
+1. In your Pages project → Custom domains  
+2. Add "reliableboston.com"
+3. Add "www.reliableboston.com"
+4. IMPORTANT: Turn OFF proxy (gray cloud, not orange)
+
+STEP 5: WAIT & TEST
+- DNS propagation: 5-30 minutes
+- SSL certificate: 5-15 minutes  
+- Test: https://reliableboston.com
+
+========================================
+DIRECT BENEFITS:
+- No proxy interference
+- Faster response times  
+- Full control over caching
+- No Cloudflare routing delays
+- Direct connection to your site
+========================================
+
+CONTACT FORM ENDPOINT: https://formspree.io/f/mojzkppd
+EMPLOYMENT FIELDS: Auto-show when "Employment History" selected
+
+Your site is production-ready with:
+✓ SSL certificate
+✓ Mobile responsive design  
+✓ Contact form with validation
+✓ Employment history fields
+✓ SEO optimization
+✓ Professional Reliable Machine branding
